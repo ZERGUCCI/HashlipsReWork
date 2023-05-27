@@ -5,10 +5,11 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
+const namePrefix = "Kingdomly Test";
+const description = "Kingdomly knights and hashlips dragons combined into one collection";
 const baseUri = "ipfs://NewUriToReplace";
 
+// IGNORE THISE KOBE/MIKA
 const solanaMetadata = {
   symbol: "YC",
   seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
@@ -23,8 +24,11 @@ const solanaMetadata = {
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
+
+  // First subfolder of layers for the dragon eyes
   {
-    growEditionSizeTo: 5,
+    // Create 20 Dragon Eye artworks
+    growEditionSizeTo: 20,
     layersOrder: [
       { name: "Background" },
       { name: "Eyeball" },
@@ -35,9 +39,20 @@ const layerConfigurations = [
       { name: "Top lid" },
     ],
   },
+  //Second subfolder with all the kingdomly knights
+  {
+    // Creates an additional 50 kingdomly artworks
+    growEditionSizeTo: 70,
+    layersOrder: [
+      { name: "body" },
+      { name: "weapon"},
+      { name: "head" },
+    ],
+  }
 ];
 
-const shuffleLayerConfigurations = false;
+//Shuffles the subfolder layers for us
+const shuffleLayerConfigurations = true;
 
 const debugLogs = false;
 
